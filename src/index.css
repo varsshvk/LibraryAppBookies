@@ -1,0 +1,8 @@
+ul {
+  list-style-position: inside; /* Keeps bullet inside the content box */
+  padding-left: 0;             /* Removes extra left padding */
+  margin-left: 0;              /* Optional: aligns with container edge */
+}
+li {
+  margin: 0;                   /* Removes extra spacing between items */
+}

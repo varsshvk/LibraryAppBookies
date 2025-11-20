@@ -1,0 +1,200 @@
+.user-root {
+  display: flex;
+  height: 100vh;               /* Fill entire screen height */
+  width: 100vw;                /* Fill entire screen width */
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.user-sidebar {
+  width: 200px;
+  background: #6a5acd;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0 30px 30px 0;
+  padding: 20px;
+  box-shadow: 3px 0 8px rgba(0, 0, 0, 0.2);
+  animation: slideInLeft 0.7s ease;
+}
+
+/* make image smaller, circular, and more icon-like */
+.brand-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  margin-bottom: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* small hover pop */
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-main {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.brand-sub {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.side-nav button {
+  background: #fff;
+  color: #6a5acd;
+  border: none;
+  border-radius: 12px;
+  padding: 10px;
+  margin: 8px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+.side-nav button:hover {
+  background: #483d8b;
+  color: white;
+  transform: translateX(5px);
+}
+
+.sidebar-foot {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.logout {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.logout:hover {
+  background: #d6336c;
+}
+
+/* Main */
+.user-main {
+  flex: 1;
+  padding: 25px;
+  background: url("/assets/library-bg.jpg") no-repeat center/cover;
+  color: #333;
+}
+
+.top-tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.tab-btn.active {
+  border-bottom: 3px solid #6a5acd;
+  font-weight: 600;
+}
+.tab-btn:hover {
+  color: #6a5acd;
+}
+
+.profile-pic {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+/* Popup */
+.profile-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  width: 320px;
+  text-align: center;
+  position: relative;
+  animation: zoomIn 0.5s ease;
+}
+.profile-avatar {
+  width: 80px;
+  margin-bottom: 10px;
+}
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.update-btn {
+  background: #6a5acd;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.update-btn:hover {
+  background: #483d8b;
+}
+
+.hero-img {
+  width: 300px;
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+.home-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 2rem;
+}
+.home-text {
+  flex: 1;
+}
+.home-img img {
+    margin-top: 100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}

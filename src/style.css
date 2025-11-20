@@ -1,0 +1,214 @@
+/* ========= GLOBAL PAGE LAYOUT ========= */
+:root {
+  --accent: #1cb38a;
+  --accent-dark: #10906d;
+  --bg: #f5f7fa;
+  --muted: #6b7280;
+  --radius: 14px;
+  --shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(135deg, #eaf2ef, #ffffff);
+}
+
+/* ========= WRAPPER ========= */
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* ========= CARD CONTAINER ========= */
+.auth-card {
+  display: flex;
+  width: 900px;
+  height: 540px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========= LEFT SECTION (FORM) ========= */
+.auth-form-section {
+  flex: 1;
+  padding: 60px 60px 40px 60px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.tab-header a {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.active-tab {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 4px;
+  color: #000206;
+}
+
+.inactive-tab {
+  color: #999;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* INPUT GROUPS */
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(28, 179, 138, 0.2);
+  background: #fff;
+}
+
+.input-icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex: 1;
+  font-size: 1rem;
+  color: #222;
+}
+
+/* REMEMBER + FORGOT */
+.remember-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.remember-section input[type='checkbox'] {
+  accent-color: var(--accent);
+  transform: scale(1.2);
+  margin-right: 4px;
+}
+
+.forgot-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.login-btn {
+  margin-top: 10px;
+  background: var(--accent);
+  color: rgb(11, 1, 1);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 179, 138, 0.25);
+}
+
+/* ========= RIGHT SECTION (IMAGE) ========= */
+.auth-image-section {
+  flex: 1.2;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 900px) {
+  .auth-card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+  .auth-image-section {
+    display: none;
+  }
+  .auth-form-section {
+    padding: 40px 30px;
+  }
+}
+.remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 20px 0;
+  font-size: 0.9rem;
+}
+
+.remember label {
+  color: #333;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+  color: #357ac9;
+}

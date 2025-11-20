@@ -1,0 +1,210 @@
+/* ===== Page Layout ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f6fa;
+}
+
+/* Full screen flex center */
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Card with two sections */
+.register-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1000px;
+  margin: 40px auto;
+  gap: 30px;
+}
+
+/* 🔹 Make both left & right sections same height */
+.register-card > .register-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* ===== Left: Form ===== */
+.register-container {
+  flex: 1;
+  padding: 40px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.register-container h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.register-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.register-container input,
+.register-container select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.register-container input:focus,
+.register-container select:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  background-color: #fff;
+  outline: none;
+}
+
+.register-container button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px 0;
+  background-color: #4f46e5;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.register-container button:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.25);
+}
+
+/* Fix for link not clickable due to overlapping image */
+.register-container div {
+  position: relative;
+  z-index: 2; /* ensures link is above everything */
+}
+
+
+.register-container a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-container a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Right: Image ===== */
+.register-image {
+  flex: 1.2;
+  background: #f4f6f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   pointer-events: none; 
+}
+
+.register-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .register-card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .register-image {
+    display: none;
+  }
+}
+
+
+/* Password Strength Styling */
+.password-strength {
+  margin-top: 5px;
+}
+
+.strength-bar {
+  height: 6px;
+  border-radius: 4px;
+  background-color: #ddd;
+  margin-bottom: 5px;
+  transition: width 0.3s ease;
+}
+
+.strength-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.strength-bar.weak {
+  width: 20%;
+  background-color: red;
+}
+.strength-bar.okay {
+  width: 40%;
+  background-color: orange;
+}
+.strength-bar.good {
+  width: 60%;
+  background-color: yellowgreen;
+}
+.strength-bar.strong {
+  width: 80%;
+  background-color: green;
+}
+.strength-bar.very-strong {
+  width: 100%;
+  background-color: darkgreen;
+}
+
+.password-requirements {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #555;
+}
+.password-requirements li {
+  margin-bottom: 4px;
+}
+.password-requirements li.valid {
+  color: green;
+  font-weight: 600;
+}
